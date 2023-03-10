@@ -1,0 +1,161 @@
+<div>
+  <div>
+    <h1>
+      Connection #<%= @the_connection.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/connections">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_connection/<%= @the_connection.id %>">
+          Delete connection
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_connection.user_id %>
+      </dd>
+
+      <dt>
+        Comment
+      </dt>
+      <dd>
+        <%= @the_connection.comment %>
+      </dd>
+
+      <dt>
+        Photo
+      </dt>
+      <dd>
+        <%= @the_connection.photo %>
+      </dd>
+
+      <dt>
+        Company
+      </dt>
+      <dd>
+        <%= @the_connection.company_id %>
+      </dd>
+
+      <dt>
+        Connection of connections
+      </dt>
+      <dd>
+        <%= @the_connection.connection_of_connections_id %>
+      </dd>
+
+      <dt>
+        Current company
+      </dt>
+      <dd>
+        <%= @the_connection.current_company %>
+      </dd>
+
+      <dt>
+        Connection name
+      </dt>
+      <dd>
+        <%= @the_connection.connection_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_connection.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_connection.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit connection
+    </h2>
+
+    <form action="/modify_connection/<%= @the_connection.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_connection.user_id %>">
+      </div>
+
+      <div>
+        <label for="comment_box">
+          Comment
+        </label>
+
+        <input type="text" id="comment_box" name="query_comment" value="<%= @the_connection.comment %>">
+      </div>
+
+      <div>
+        <label for="photo_box">
+          Photo
+        </label>
+
+        <input type="text" id="photo_box" name="query_photo" value="<%= @the_connection.photo %>">
+      </div>
+
+      <div>
+        <label for="company_id_box">
+          Company
+        </label>
+
+        <input type="text" id="company_id_box" name="query_company_id" value="<%= @the_connection.company_id %>">
+      </div>
+
+      <div>
+        <label for="connection_of_connections_id_box">
+          Connection of connections
+        </label>
+
+        <input type="text" id="connection_of_connections_id_box" name="query_connection_of_connections_id" value="<%= @the_connection.connection_of_connections_id %>">
+      </div>
+
+      <div>
+        <label for="current_company_box">
+          Current company
+        </label>
+
+        <input type="text" id="current_company_box" name="query_current_company" value="<%= @the_connection.current_company %>">
+      </div>
+
+      <div>
+        <label for="connection_name_box">
+          Connection name
+        </label>
+
+        <input type="text" id="connection_name_box" name="query_connection_name" value="<%= @the_connection.connection_name %>">
+      </div>
+
+      <button>
+        Update connection
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

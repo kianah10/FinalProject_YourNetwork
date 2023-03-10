@@ -1,0 +1,71 @@
+<div>
+  <div>
+    <h1>
+      Current company #<%= @the_current_company.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/current_companies">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_current_company/<%= @the_current_company.id %>">
+          Delete current company
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Company name
+      </dt>
+      <dd>
+        <%= @the_current_company.company_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_current_company.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_current_company.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit current company
+    </h2>
+
+    <form action="/modify_current_company/<%= @the_current_company.id %>"  method="post" >
+      <div>
+        <label for="company_name_box">
+          Company name
+        </label>
+
+        <input type="text" id="company_name_box" name="query_company_name" value="<%= @the_current_company.company_name %>">
+      </div>
+
+      <button>
+        Update current company
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
